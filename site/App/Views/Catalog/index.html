@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %} Каталог {% endblock %}
+{% block body%}
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="product_grid">
+                    <br>
+                    <!-- Product -->
+                    {% for p in goods %}
+                    <div class="product">
+                        <div class="product_image"><img src="/images/{{p.picture}}" alt=""></div>
+                        <div class="product_content">
+                            <div class="product_title"><a href="/Product/good/{{p.id}}">{{ p.name }}</a></div>
+                            <div class="product_price">{{ p.price }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

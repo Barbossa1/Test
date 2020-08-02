@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} Товар {% endblock %}
+{% block body%}
+{% for p in goods %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="product_details">
+    <div class="container">
+        <div class="row details_row">
+            <!-- Product Content -->
+            <div class="col-lg-6">
+                <div class="details_content">
+                    <div class="product_image"><img src="/images/{{p.picture}}" alt=""></div>
+                    <div class="details_name">{{ p.name }}</div>
+                    <div class="details_price">{{ p.price }}</div>
+                    <div class="details_text">
+                        <p>{{ p.info }}</p>
+                    </div>
+                    <div class="button cart_button"><a href="#">Add to cart</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
